@@ -1,0 +1,35 @@
+DOCTYPE html
+html(lang="ru")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(
+      rel="shortcut icon"
+      href="https://raw.githubusercontent.com/Ubuntu-Sway/calamares-settings-ubuntusway/main/ubuntusway/branding/ubuntusway/icon.png"
+      type="image/png")
+    link(
+      rel="stylesheet"
+      href="css/style.css"
+      type="text/css")
+    title Ubuntu Sway | {{ page.title }}
+  body
+    nav
+      input(type="checkbox" id="nav-toggle")
+      label(for="nav-toggle")
+        img(
+          src="https://raw.githubusercontent.com/Ubuntu-Sway/calamares-settings-ubuntusway/main/ubuntusway/branding/ubuntusway/icon.png"
+          width="32px"
+          class="brand-logo"
+        )
+      .brand
+        img(
+          src="https://raw.githubusercontent.com/Ubuntu-Sway/calamares-settings-ubuntusway/main/ubuntusway/branding/ubuntusway/icon.png"
+          width="32px"
+          class="brand-logo"
+        )
+        p Ubuntu Sway
+      a(href="index.html") Главная
+      a(href="download.html") Загрузить
+      a(href="https://github.com/Ubuntu-Sway") Github
+    main {{ content }}
+    footer
+      a(href="https://ubuntu.com") &copyUbuntu

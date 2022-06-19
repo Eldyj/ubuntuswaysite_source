@@ -1,0 +1,189 @@
+---
+---
+
+@import "./variables.sass"
+
+#prev, #next
+	transform: translateY(-63vh)
+	background: $main-bg
+	color: $main-text
+	border: none
+	position: fixed
+	top: 35vh
+	padding-left: 0.5rem
+	padding-right: 0.5rem
+
+body
+	font-family: sans-serif
+	background: $main-bg
+	color: $main-text
+	margin: 0
+	padding: 0
+	&.inActive
+		overflow: hidden
+		.screenshots img:not(.active)
+			pointer-events: none
+			filter: blur(1rem)
+		a
+			pointer-events: none
+		#prev,#next
+			transform: translateY(0)
+			height: 30vh
+			z-index: 11
+			transition: 0.5s
+			cursor: pointer
+		#prev
+			left: 8.3vw
+			border-top-left-radius: 1rem
+			border-bottom-left-radius: 1rem
+		#next
+			right: 8.3vw
+			border-top-right-radius: 1rem
+			border-bottom-right-radius: 1rem
+
+a
+	color: $main-text
+	text-decoration: none
+	transition: 0.3s
+	&.torrent
+		display: inline-block
+		background-color: $main-bg
+		padding: 1rem
+		width: 7rem
+		margin-top: 0.5rem
+		border-radius: 1rem
+		&:hover
+			background-color: lighten($main-bg, 10%)
+	&:hover
+		color: #b6caff
+		transition: 0.3s
+	&.btn
+		padding: 1rem
+		display: inline-block
+		background: linear-gradient(to right, $brand 0%, $brand-based1 50%, $brand-based2 100%)
+		background-size: 200%
+		background-position-x: left
+		border-radius: 1rem
+		width: 7rem
+		margin-top: 0.5rem
+		transition: 0.5s background-position-x, 0.5s text-shadow
+		&:hover
+			text-shadow: 0px 0px 1rem $main-text
+			color: $main-text
+			background-position-x: right
+			transition: 0.5s background-position-x, 0.5s text-shadow
+
+nav
+	background: $second-bg
+	display: flex
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	align-items: center
+	padding-left: 0.5rem
+	padding-right: 0.5rem
+	min-height: 1.4rem
+	z-index: 9
+	a,img
+		padding: 0.3rem
+		margin: 0.1rem
+	input,label
+		display: none
+	.brand
+		display: flex
+		align-items: center
+		margin-right: 3rem
+
+main section
+	background: $second-bg
+	border-radius: 1rem
+	justify-content: center
+	margin: 1rem
+	padding: 0.7rem
+	text-align: center
+	&:first-child
+		margin-top: 3.8rem
+	&.screenshots
+		img
+			cursor: zoom-in
+			border-radius: 1rem
+			outline-color: rgba(#000, 0.7)
+			margin: 0.1rem
+			width: 25%
+			&.active
+				margin: 0
+				cursor: zoom-out
+				border-radius: 0
+				align-self: center
+				left: 10vw
+				outline: 37vh solid rgba(#000, 0.7)
+				position: fixed
+				right: 10vw
+				top: 3.44vh
+				width: 80%
+				z-index: 10
+				&.animated
+					transition: 0.5s outline, 0.5s width
+			&.hidden
+				pointer-events: none
+	li
+		list-style-type: none
+		transform: translatex(-1rem)
+		a
+			text-decoration: underline
+
+footer
+	margin-top: 70vh
+	background: $second-bg
+	padding: 1rem
+	a
+		text-decoration: underline
+
+@media (max-width: 1080px)
+	body.inActive
+		#prev,#next
+			height: 3rem
+			width: 3rem
+			top: auto
+			bottom: 3.44vh
+			border-radius: 100%
+		nav
+			display: none
+
+	main section.screenshots img
+		width: 49%
+		&.active
+			width: 100%
+			left: 0
+			top: 37vh
+			bottom: 37vw
+
+	nav
+		align-items: center
+		flex-direction: column
+		.brand
+			display: none
+	#nav-toggle
+		~ label
+			transform: translatex(-44vw)
+			display: block
+			transition: 0.5s ease-in
+		~ a
+			font-size: 0rem
+			padding: 0rem
+			margin: 0rem
+			opacity: 0
+			transform: translatex(-70vw)
+			transition: 0.5s ease-out
+		&:checked
+			~ label
+				transform: rotate(180deg) translatex(44vw)
+				transition: 0.5s ease-out
+			~ a
+				font-size: 1.1rem
+				padding: 0.3rem
+				margin: 0.1rem
+				opacity: 1
+				transform: translatex(0)
+				transition: 0.5s ease-in

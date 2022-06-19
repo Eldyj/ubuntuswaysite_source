@@ -1,0 +1,76 @@
+---
+layout: default
+title: Главная
+---
+
+section(class="screenshots")
+  img(src="img/1_emptyScreen.png" alt="start screen")
+  img(src="img/2_neofetch.png" alt="neofetch")
+  img(src="img/3_winD.png" alt="programm menu")
+  img(src="img/4_mainMenu.png" alt="fullscreen menu")
+  img(src="img/5_tiling.png" alt="tiling")
+  button(onclick="curImg(0)" class="imgBtn" id="prev") <
+  button(onclick="curImg(1)" class="imgBtn" id="next") >
+  br/  Наш проект это попытка взять всё лучшее из Sway, Wayland и Ubuntu.
+  br/
+  p Программы по умолчанию:
+  ul
+    li Браузер - 
+      strong Firefox
+    li Офис - 
+      strong LibreOffice
+    li Проводник - 
+      strong PCmanFM
+    li Текстовый редактор - 
+      strong Pluma
+    li Терминал - 
+      strong Foot
+    section(class="links")
+      a(href="download.html" class="btn") загрузить
+      a(href="https://matrix.to/#/#ubuntusway:matrix.org" class="btn") Matrix
+section(class="apps") Уже установлено:
+  ul
+    li
+      a(href="https://github.com/nwg-piotr/azote") Azote
+    li
+      a(href="https://github.com/nwg-piotr/autotiling") Autotiling
+    li
+      a(href="https://github.com/sentriz/cliphist") Cliphist
+    li Flatpak
+    li Gimp
+    li Gparted
+    li
+      a(href="https://sr.ht/~kennylevinsen/greetd/") Greetd
+    li
+      a(href="https://github.com/swaywm/sway/blob/master/contrib/grimshot") Grimshot
+    li Htop
+    li
+      a(href="https://git.sr.ht/~emersion/kanshi") Kanshi
+    li
+      a(href="https://github.com/pimutils/khal") Khal
+    li LibreOffice
+    li Pavucontrol
+    li
+      a(href="https://sr.ht/~kennylevinsen/poweralertd/") Poweralertd
+    li Pulsemixer
+    li
+      a(href="https://github.com/artemsen/swayimg") Swayimg
+    li Ranger
+    li Thunderbird
+    li
+      a(href="https://github.com/apognu/tuigreet") Tuigreet
+    li
+      a(href="https://github.com/nwg-piotr/nwg-wrapper") nwg-wrapper
+    li
+      a(href="https://github.com/nwg-piotr/nwg-drawer") nwg-drawer
+    li Ubuntu Driver Manager
+    li Waybar
+    li
+      a(href="https://github.com/luispabon/wdisplays") Wdisplays
+    li
+      a(href="https://github.com/ammen99/wf-recorder") wf-recorder
+    li
+      a(href="https://sr.ht/~emersion/wlr-randr/") wlr-randr
+    li
+      a(href="https://github.com/pwmt/zathura") Zathura
+script(src="js/img.js" type="text/javascript")
